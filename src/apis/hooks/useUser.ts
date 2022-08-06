@@ -1,8 +1,8 @@
-import { useMutation, useQuery} from "@tanstack/react-query";
-import {User} from "../../types/User";
-import {FindUsersListResponse} from "../responses/FindUsersListResponse";
-import {userApi} from "../gateways/UserApi";
-import {FindUsersListRequest} from "../requests/FindUsersListRequest";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { User } from "../../types/User";
+import { userApi } from "../gateways/UserApi";
+import { FindUsersListResponse } from "../responses/FindUsersListResponse";
+import { FindUsersListRequest } from "../requests/FindUsersListRequest";
 
 export const useQueryUsers = (query: FindUsersListRequest) => {
   return useQuery<FindUsersListResponse, Error>({

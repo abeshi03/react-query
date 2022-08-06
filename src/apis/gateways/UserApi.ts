@@ -1,9 +1,10 @@
-import {UserApiImpl} from "../implements/UserApiImpl";
-import {FindUsersListRequest} from "../requests/FindUsersListRequest";
-import {FindUsersListResponse} from "../responses/FindUsersListResponse";
 import axios from "axios";
-import {ApiResponse} from "../responses/ApiResponse";
-import {User} from "../../types/User";
+
+import { User } from "../../types/User";
+import { UserApiImpl } from "../implements/UserApiImpl";
+import { FindUsersListRequest } from "../requests/FindUsersListRequest";
+import { ApiResponse } from "../responses/ApiResponse";
+import { FindUsersListResponse } from "../responses/FindUsersListResponse";
 
 class UserApi implements UserApiImpl {
   public async findList(query: FindUsersListRequest): Promise<FindUsersListResponse> {

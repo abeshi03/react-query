@@ -1,6 +1,7 @@
-import {FindUsersListRequest} from "../requests/FindUsersListRequest";
-import {FindUsersListResponse} from "../responses/FindUsersListResponse";
-import {User} from "../../types/User";
+import { User } from "../../types/User";
+
+import { FindUsersListRequest } from "../requests/FindUsersListRequest";
+import { FindUsersListResponse } from "../responses/FindUsersListResponse";
 
 export interface UserApiImpl {
   findList: (query: FindUsersListRequest) => Promise<FindUsersListResponse>
