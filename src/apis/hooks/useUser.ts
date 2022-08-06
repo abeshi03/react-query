@@ -26,6 +26,7 @@ export const useMutateUser = () => {
 
   const createUser = useMutation((user: Omit<User, "id">) => userApi.create(user))
   const updateUser = useMutation((user: User) => userApi.update(user))
+  const deleteUser = useMutation((userId: number) => userApi.delete(userId))
 
-  return { createUser, updateUser }
+  return { createUser, updateUser, deleteUser }
 }

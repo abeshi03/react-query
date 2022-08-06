@@ -47,6 +47,11 @@ class UserApi implements UserApiImpl {
       avatarUri: requestBody.avatarUri ? requestBody.avatarUri : undefined
     });
   }
+
+  public async delete(userId: number): Promise<void> {
+    const url = `http://localhost:5000/users/${userId}`
+    await axios.delete(url);
+  }
 }
 
 export const userApi = new UserApi();

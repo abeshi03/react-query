@@ -10,4 +10,6 @@ export interface UserApiImpl {
   create: (requestBody: Omit<User, "id">) => Promise<number>
 
   update: (requestBody: User) => Promise<void>
+
+  delete: (userId: number) => Promise<void>
 }
