@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import {ChangeEvent, useState} from "react";
-import {useQueryUsers} from "../src/apis/hooks/useQueryUsers";
+import {useQueryUsers} from "../src/apis/hooks/useUser";
 import {useRouter} from "next/router";
 
 const Home: NextPage = () => {

@@ -23,6 +23,19 @@ class UserApi implements UserApiImpl {
     return res.data.data;
   }
 
+  public async create(requestBody: Omit<User, "id">): Promise<number> {
+    const url = `http://localhost:5000/users/`
+    const res = await axios.post(url, {
+      email: requestBody.email,
+      name: requestBody.name,
+      role: requestBody.role,
+      description: requestBody.description,
+      avatarUri: requestBody.avatarUri ? requestBody.avatarUri : undefined
+    });
+
+    return (res.data).data.id;
+  }
+
   public async update(requestBody: User): Promise<void> {
     const url = `http://localhost:5000/users/${requestBody.id}`
     await axios.patch(url, {

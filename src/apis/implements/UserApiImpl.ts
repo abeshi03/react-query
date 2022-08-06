@@ -7,5 +7,7 @@ export interface UserApiImpl {
 
   findById: (userId: number) => Promise<User>
 
+  create: (requestBody: Omit<User, "id">) => Promise<number>
+
   update: (requestBody: User) => Promise<void>
 }

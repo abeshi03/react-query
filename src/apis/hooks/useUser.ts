@@ -1,4 +1,4 @@
-import {QueryClient, useMutation, useQuery} from "@tanstack/react-query";
+import { useMutation, useQuery} from "@tanstack/react-query";
 import {User} from "../../types/User";
 import {FindUsersListResponse} from "../responses/FindUsersListResponse";
 import {userApi} from "../gateways/UserApi";
@@ -17,15 +17,15 @@ export const useQueryUsers = (query: FindUsersListRequest) => {
 
 export const useQueryUser = (userId: number) => {
   return useQuery<User, Error>({
-    queryKey: ["user", userId],
+    queryKey: ["useUser", userId],
     queryFn: () => userApi.findById(userId)
   })
 }
 
 export const useMutateUser = () => {
-  const queryClient = new QueryClient()
 
+  const createUser = useMutation((user: Omit<User, "id">) => userApi.create(user))
   const updateUser = useMutation((user: User) => userApi.update(user))
 
-  return { updateUser }
+  return { createUser, updateUser }
 }

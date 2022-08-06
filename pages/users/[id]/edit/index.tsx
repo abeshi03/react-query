@@ -1,4 +1,4 @@
-import {useMutateUser, useQueryUser} from "../../../../src/apis/hooks/useQueryUsers";
+import {useMutateUser, useQueryUser} from "../../../../src/apis/hooks/useUser";
 import {useRouter} from "next/router";
 import {InputField} from "../../../../src/components/InputField";
 import {SubmitHandler, useForm} from "react-hook-form";

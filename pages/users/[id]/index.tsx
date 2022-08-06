@@ -1,4 +1,4 @@
-import {useQueryUser} from "../../../src/apis/hooks/useQueryUsers";
+import {useQueryUser} from "../../../src/apis/hooks/useUser";
 import {useRouter} from "next/router";
 import {NextPage} from "next";
 import Link from "next/link";
