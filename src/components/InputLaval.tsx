@@ -1,8 +1,8 @@
 /* --- ライブラリー ---------------------------------------------------------------------------------------------------- */
-import React, { memo, VFC } from "react";
+import React, { memo, FC } from "react";
 
 /* --- アセット ------------------------------------------------------------------------------------------------------- */
-import styles from "./InputLabel.module.scss";
+import styles from "./InputLavel.module.scss"
 
 type Props = {
   label?: string;
@@ -11,7 +11,7 @@ type Props = {
 }
 
 
-export const InputLabel: VFC<Props> = memo((props) => {
+export const InputLabel: FC<Props> = memo((props) => {
 
   const { label, required, className } = props;
 
@@ -22,3 +22,5 @@ export const InputLabel: VFC<Props> = memo((props) => {
     </div>
   );
 });
+
+InputLabel.displayName = "InputLabel"

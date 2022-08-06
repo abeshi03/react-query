@@ -17,12 +17,15 @@ export const useQueryUsers = (query: FindUsersListRequest) => {
 
 export const useQueryUser = (userId: number) => {
   return useQuery<User, Error>({
-    queryKey: ["user"],
+    queryKey: ["user", userId],
     queryFn: () => userApi.findById(userId)
   })
 }
 
-export const useUpdateUser = (user: User) => {
+export const useMutateUser = () => {
   const queryClient = new QueryClient()
-  return useMutation(() => userApi.update(user))
+
+  const updateUser = useMutation((user: User) => userApi.update(user))
+
+  return { updateUser }
 }

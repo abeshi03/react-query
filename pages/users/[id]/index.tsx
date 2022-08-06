@@ -22,7 +22,7 @@ const UserDetailsPage: NextPage = () => {
       <p>{user.name}</p>
       <p>{user.email}</p>
       <p>{user.role}</p>
-      <Link href={`users/${user.id}/edit`}><a>編集</a></Link>
+      <Link href={`${user.id}/edit`}><a>編集</a></Link>
     </div>
   )
 }

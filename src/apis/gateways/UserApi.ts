@@ -24,7 +24,7 @@ class UserApi implements UserApiImpl {
   }
 
   public async update(requestBody: User): Promise<void> {
-    const url = `http://localhost:5000/users/${requestBody.id}/edit`
+    const url = `http://localhost:5000/users/${requestBody.id}`
     await axios.patch(url, {
       id: requestBody.id,
       email: requestBody.email,
